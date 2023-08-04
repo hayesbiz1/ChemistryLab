@@ -1,0 +1,13 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/Sandboxes/UIToolkit/Example1/MainView.uss?fileID=7433441132597879392&amp;guid=76cb7461addb8d344bdc076e1cea3ee8&amp;type=3#MainView" />
+    <ui:VisualElement style="flex-grow: 1; align-items: center; justify-content: center; background-color: rgb(115, 37, 54); width: 700px;">
+        <ui:VisualElement style="flex-direction: row; height: 350px;">
+            <ui:ListView focusable="true" name="CharacterList" class="border" style="width: 230px; margin-right: 6px; background-color: rgb(110, 57, 37);" />
+            <ui:VisualElement style="align-items: flex-end; justify-content: space-between;">
+                <ui:VisualElement name="CharacterDetails" class="border" style="width: 276px; align-items: center; justify-content: center; padding-left: 8px; padding-right: 8px; padding-top: 8px; padding-bottom: 8px; background-color: rgb(170, 89, 57); border-left-color: rgb(49, 26, 17); border-right-color: rgb(49, 26, 17); border-top-color: rgb(49, 26, 17); border-bottom-color: rgb(49, 26, 17); border-left-width: 4px; border-right-width: 4px; border-top-width: 4px; border-bottom-width: 4px; border-top-left-radius: 15px; border-bottom-left-radius: 15px; border-top-right-radius: 15px; border-bottom-right-radius: 15px;">
+                    <ui:VisualElement style="width: 120px; height: 120px; margin-left: 4px; margin-right: 4px; margin-top: 4px; margin-bottom: 4px; padding-left: 4px; padding-right: 4px; padding-top: 4px; padding-bottom: 4px; background-color: rgb(255, 133, 84); border-top-left-radius: 15px; border-bottom-left-radius: 15px; border-top-right-radius: 15px; border-bottom-right-radius: 15px;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

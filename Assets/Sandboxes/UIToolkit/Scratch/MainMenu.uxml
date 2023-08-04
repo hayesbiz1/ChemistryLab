@@ -1,0 +1,12 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Sandboxes/UIToolkit/Scratch/tutorial_labels.uss?fileID=7433441132597879392&amp;guid=28fe035d630cce2489b7c817ebf5983e&amp;type=3#tutorial_labels" />
+    <Style src="project://database/Assets/Sandboxes/UIToolkit/Scratch/tutorial_buttons.uss?fileID=7433441132597879392&amp;guid=0c29bc4ab086e824181ec6f60e64b5f2&amp;type=3#tutorial_buttons" />
+    <ui:VisualElement name="Background" style="background-color: rgb(170, 178, 118); flex-grow: 1; flex-direction: row;">
+        <ui:VisualElement name="Sidebar" style="flex-grow: 0; background-color: rgb(45, 6, 46); width: 30%; justify-content: center;">
+            <ui:Label tabindex="-1" text="UI Toolkit Tutorial" display-tooltip-when-elided="true" class="label-main-title" />
+            <ui:Button text="Button" display-tooltip-when-elided="true" class="button-main-title" />
+            <ui:Button text="Button" display-tooltip-when-elided="true" class="button-main-title" />
+            <ui:Button text="Button" display-tooltip-when-elided="true" class="button-main-title" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
