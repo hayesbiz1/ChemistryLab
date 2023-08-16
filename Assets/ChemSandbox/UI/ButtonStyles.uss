@@ -59,4 +59,5 @@
     padding-right: 5px;
     padding-top: 0;
     padding-bottom: 0;
+    color: rgb(36, 255, 0);
 }

@@ -1,8 +1,8 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <ui:Template name="AtomsList" src="project://database/Assets/ChemSandbox/UI/AtomsList/AtomsList.uxml?fileID=9197481963319205126&amp;guid=0179aa77e225fb647ba26eb2f285640c&amp;type=3#AtomsList" />
-    <ui:Template name="AtomDetail" src="project://database/Assets/ChemSandbox/UI/AtomDetail/AtomDetail.uxml?fileID=9197481963319205126&amp;guid=65d19a43d062255469b20c469b14a09e&amp;type=3#MainMenu" />
+    <ui:Template name="AtomDetail" src="project://database/Assets/ChemSandbox/UI/AtomDetail/AtomDetail.uxml?fileID=9197481963319205126&amp;guid=65d19a43d062255469b20c469b14a09e&amp;type=3#AtomDetail" />
     <Style src="project://database/Assets/ChemSandbox/UI/ButtonStyles.uss?fileID=7433441132597879392&amp;guid=009d93ce258bda64b81372dbecd5cc05&amp;type=3#ButtonStyles" />
-    <ui:VisualElement name="VisualElement" style="align-items: flex-start; background-color: rgb(0, 0, 0); position: relative; left: auto; flex-direction: column; width: 30%; height: 50%; opacity: 1;">
+    <ui:VisualElement name="VisualElement" style="align-items: flex-start; background-color: rgba(0, 0, 0, 0); position: relative; left: auto; flex-direction: column; width: 30%; height: 50%; opacity: 1;">
         <ui:Instance template="AtomsList" name="AtomsListRef" style="height: auto; flex-grow: 1; width: 100%;" />
         <ui:Instance template="AtomDetail" name="AtomDetailRef" />
     </ui:VisualElement>
