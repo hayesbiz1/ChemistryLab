@@ -19,9 +19,9 @@ public class App : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        var prefab = Resources.Load("AtomPrefab");
-        currentAtomGO = GameObject.Instantiate(prefab) as GameObject;
-        currentAtom = currentAtomGO.GetComponent<Atom>();
+        // var prefab = Resources.Load("AtomPrefab");
+        // currentAtomGO = GameObject.Instantiate(prefab) as GameObject;
+        // currentAtom = currentAtomGO.GetComponent<Atom>();
     }
 
     // Update is called once per frame

@@ -1,0 +1,8 @@
+.selectorBackground {
+    background-color: rgb(255, 0, 0);
+}
+
+.selectorFontColor {
+    color: rgb(85, 107, 195);
+    font-size: 30px;
+}

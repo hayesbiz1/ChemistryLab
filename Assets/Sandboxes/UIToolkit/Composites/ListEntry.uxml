@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Sandboxes/UIToolkit/Composites/ListEntry.uss?fileID=7433441132597879392&amp;guid=43ff99bc5efb5984ca65c91be270b510&amp;type=3#ListEntry" />
+    <ui:VisualElement name="list-entry" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+        <ui:Label tabindex="-1" text="Label" display-tooltip-when-elided="true" name="character-name" />
+    </ui:VisualElement>
+</ui:UXML>

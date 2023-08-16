@@ -1,0 +1,12 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="AtomsList" src="project://database/Assets/ChemSandbox/UI/AtomsList/AtomsList.uxml?fileID=9197481963319205126&amp;guid=0179aa77e225fb647ba26eb2f285640c&amp;type=3#AtomsList" />
+    <ui:Template name="MainMenu" src="project://database/Assets/ChemSandbox/UI/MainMenu.uxml?fileID=9197481963319205126&amp;guid=6c52023150bf9bd4984aeee2364dd8ef&amp;type=3#MainMenu" />
+    <ui:VisualElement name="Container" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+        <ui:VisualElement name="Upper" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+            <ui:Instance template="AtomsList" name="AtomsList" style="flex-grow: 1;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Lower" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+            <ui:Instance template="MainMenu" name="MainMenu" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

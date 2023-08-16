@@ -1,0 +1,42 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/Sandboxes/UIToolkit/Scratch/sheet1.uss?fileID=7433441132597879392&amp;guid=fcec3f9aa9f5a0743bba1e879b9e5116&amp;type=3#sheet1" />
+    <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+        <ui:VisualElement name="VisualElement" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row; flex-basis: 33%;">
+            <ui:VisualElement style="flex-grow: 0; background-color: rgb(173, 161, 79); height: 40%; flex-direction: row; width: 70%; flex-shrink: 1;">
+                <ui:VisualElement name="VisualElement" style="flex-grow: 1; background-color: rgb(255, 0, 0); -unity-background-image-tint-color: rgb(255, 0, 0); flex-basis: 75%; border-left-width: 10px; border-right-width: 10px; border-top-width: 10px; border-bottom-width: 10px; border-left-color: rgb(14, 255, 0); border-right-color: rgb(14, 255, 0); border-top-color: rgb(14, 255, 0); border-bottom-color: rgb(14, 255, 0); flex-shrink: 1;" />
+                <ui:VisualElement name="VisualElement" style="flex-grow: 1; background-color: rgb(255, 0, 0); -unity-background-image-tint-color: rgb(255, 0, 0); flex-basis: 50%; border-left-width: 10px; border-right-width: 10px; border-top-width: 10px; border-bottom-width: 10px; border-left-color: rgb(14, 255, 0); border-right-color: rgb(14, 255, 0); border-top-color: rgb(14, 255, 0); border-bottom-color: rgb(14, 255, 0); flex-shrink: 1;" />
+            </ui:VisualElement>
+            <ui:VisualElement style="flex-grow: 1; background-color: rgb(114, 2, 128); height: 40%; align-items: center; justify-content: center; flex-direction: row;">
+                <ui:Button text="Button1" display-tooltip-when-elided="true" style="width: 50px; height: 50px; flex-direction: column-reverse;" />
+                <ui:Button text="Button2" display-tooltip-when-elided="true" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 1; background-color: rgb(194, 195, 155); flex-basis: 33%; flex-direction: row;">
+            <ui:VisualElement name="VisualElement" style="flex-grow: 0; background-color: rgba(255, 148, 0, 0.36); flex-basis: 20%;">
+                <ui:Button text="Button" display-tooltip-when-elided="true" style="display: flex; visibility: visible;" />
+                <ui:Button text="Button" display-tooltip-when-elided="true" />
+                <ui:Button text="Button" display-tooltip-when-elided="true" />
+            </ui:VisualElement>
+            <ui:VisualElement name="VisualElement" style="flex-grow: 0; background-color: rgba(255, 148, 0, 0.36); flex-basis: 20%;">
+                <ui:Button text="Button" display-tooltip-when-elided="true" />
+                <ui:Button text="Button" display-tooltip-when-elided="true" />
+                <ui:Button text="Button" display-tooltip-when-elided="true" class="selectorFontColor selectorBackground" />
+            </ui:VisualElement>
+            <ui:VisualElement name="VisualElement" style="flex-grow: 0; background-color: rgba(154, 96, 96, 0.58); flex-direction: row; align-items: center;">
+                <ui:Button text="Hello there stevie fkdkfkdfkkf" display-tooltip-when-elided="true" enable-rich-text="true" style="flex-basis: auto; flex-direction: row; width: 25%; height: 50px; flex-grow: 1; flex-shrink: 1; flex-wrap: wrap;" />
+                <ui:Button text="Button" display-tooltip-when-elided="true" style="flex-basis: auto; flex-direction: column; width: 50px; height: 50px;" />
+                <ui:Button text="Button" display-tooltip-when-elided="true" style="flex-basis: auto; flex-direction: column; width: 50px; height: 50px;" />
+                <ui:Label tabindex="-1" text="Hi there" display-tooltip-when-elided="true" />
+                <ui:Button text="Button" display-tooltip-when-elided="true" style="flex-basis: auto; flex-direction: column; width: 50px; height: 50px;" />
+                <ui:Button text="Button" display-tooltip-when-elided="true" style="flex-basis: auto; flex-direction: column; width: 50px; height: 50px;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-basis: 33%;">
+            <ui:VisualElement name="VisualElement" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row; flex-basis: 50%; width: 860px;">
+                <ui:Label tabindex="-1" text="Label" display-tooltip-when-elided="true" style="flex-grow: 1; background-color: rgb(153, 159, 39); flex-shrink: 1;" />
+                <ui:Label tabindex="-1" text="Label" display-tooltip-when-elided="true" class="selector1 selectorBackground selectorFontColor" style="flex-grow: 2; width: 319px; flex-shrink: 1;" />
+            </ui:VisualElement>
+            <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-basis: 50%;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

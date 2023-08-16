@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/ChemSandbox/UI/ButtonStyles.uss?fileID=7433441132597879392&amp;guid=009d93ce258bda64b81372dbecd5cc05&amp;type=3#ButtonStyles" />
+    <ui:VisualElement name="VisualElement" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: row; height: auto; align-self: auto; align-items: center; flex-basis: 30px;">
+        <ui:Label tabindex="-1" text="Label" display-tooltip-when-elided="true" name="elementName" class="listEntryLabel" />
+        <ui:Label tabindex="-1" text="Label" display-tooltip-when-elided="true" name="symbol" class="listEntryLabel" />
+    </ui:VisualElement>
+</ui:UXML>

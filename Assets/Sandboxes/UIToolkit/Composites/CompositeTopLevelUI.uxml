@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="SampleList" src="project://database/Assets/Sandboxes/UIToolkit/Composites/SampleList.uxml?fileID=9197481963319205126&amp;guid=2d52ecea05cb92b4ba78d09f43546ce7&amp;type=3#SampleList" />
+    <ui:Template name="SampleDetail" src="project://database/Assets/Sandboxes/UIToolkit/Composites/SampleDetail.uxml?fileID=9197481963319205126&amp;guid=90c4f86157519c7498a4d1bf2d5e5370&amp;type=3#SampleDetail" />
+    <ui:VisualElement style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: column; height: 100%; width: 30%;">
+        <ui:Instance template="SampleList" name="SampleList" style="height: 30%;" />
+        <ui:Instance template="SampleDetail" name="SampleDetail" style="flex-grow: 1;" />
+    </ui:VisualElement>
+</ui:UXML>

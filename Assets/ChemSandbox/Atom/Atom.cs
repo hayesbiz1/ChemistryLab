@@ -1,8 +1,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Atom : MonoBehaviour
+public class Atom 
 {
+    public string elementName;
+    
     public List<Proton> protons;
     public List<Neutron> neutrons;
     public List<Electron> electrons;
