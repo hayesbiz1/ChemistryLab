@@ -7,6 +7,8 @@ public class AtomListViewController
     private ListView atomListView;
     private Label elementNameLabel;
 
+    private AtomDetailViewController atomDetailViewController;
+
     private VisualTreeAsset atomListEntryTemplate;
 
     private List<Atom> atomList;
@@ -25,6 +27,8 @@ public class AtomListViewController
 
         InitializeAtomListView();
 
+        InitializeAtomDetailView(root);
+
         // MUST have both of these handlers or selectedIndicesChanged does not fire reliably.
         atomListView.itemsChosen += OnSelectedAtomChanged;
         atomListView.selectedIndicesChanged += OnSelectedIndicesChanged;
@@ -38,7 +42,6 @@ public class AtomListViewController
         AddAtom("Helium");
         AddAtom("Lithium");
         AddAtom("Beryllium");
-        
     }
 
     private void AddAtom(string elementName)
@@ -66,7 +69,7 @@ public class AtomListViewController
         };
 
         atomListView.fixedItemHeight = 22;
-
+        
         atomListView.itemsSource = atomList;
     }
 
@@ -77,10 +80,18 @@ public class AtomListViewController
     
     private void OnSelectedIndicesChanged(IEnumerable<int> obj)
     {
-        // Debug.Log("yep.");
+
+        // Set selectedAtom into AtomDetailViewController.
         var selectedAtom = atomListView.selectedItem as Atom;
-        Debug.Log(selectedAtom.elementName);
+        atomDetailViewController.SetAtom(selectedAtom);
     }
+    
+    
+    private void InitializeAtomDetailView(VisualElement root)
+    {
+        atomDetailViewController = new AtomDetailViewController(root);
+    }
+    
 
     // private void OnSelectedAtomChanged(IEnumerable<object> obj)
     // {

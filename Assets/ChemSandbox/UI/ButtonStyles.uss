@@ -21,6 +21,9 @@
 }
 
 .label1 {
+    background-color: rgb(0, 0, 0);
+    color: rgb(21, 255, 0);
+    -unity-font-style: bold;
 }
 
 .button:hover {
@@ -60,4 +63,16 @@
     padding-top: 0;
     padding-bottom: 0;
     color: rgb(36, 255, 0);
+}
+
+.unity-list-view__item:hover {
+    border-left-color: rgb(29, 255, 0);
+    border-right-color: rgb(29, 255, 0);
+    border-top-color: rgb(29, 255, 0);
+    border-bottom-color: rgb(29, 255, 0);
+    border-left-width: 3px;
+    border-right-width: 3px;
+    border-top-width: 3px;
+    border-bottom-width: 3px;
+    background-color: rgb(19, 77, 5);
 }

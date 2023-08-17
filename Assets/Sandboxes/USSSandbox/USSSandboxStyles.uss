@@ -1,0 +1,51 @@
+VisualElement {
+}
+
+.test1 {
+}
+
+Button {
+    background-color: rgb(255, 0, 0);
+}
+
+Label {
+    color: rgb(0, 60, 132);
+}
+
+#resumeButton {
+    background-color: rgb(0, 66, 255);
+}
+
+.standardBackgroundAndBorder {
+    background-color: rgb(255, 242, 133);
+    border-left-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+}
+
+Button:hover {
+    border-left-color: rgb(0, 255, 228);
+    border-right-color: rgb(0, 255, 228);
+    border-top-color: rgb(0, 255, 228);
+    border-bottom-color: rgb(0, 255, 228);
+    border-left-width: 5px;
+    border-right-width: 5px;
+    border-top-width: 5px;
+    border-bottom-width: 5px;
+}
+
+Toggle:hover {
+    border-left-color: rgb(46, 255, 0);
+    border-right-color: rgb(46, 255, 0);
+    border-top-color: rgb(46, 255, 0);
+    border-bottom-color: rgb(46, 255, 0);
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+}

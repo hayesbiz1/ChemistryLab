@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Sandboxes/USSSandbox/USSSandboxStyles.uss?fileID=7433441132597879392&amp;guid=d1f89c135d9c2e148ad64e9fac08aa02&amp;type=3#USSSandboxStyles" />
+    <ui:Button text="Button" display-tooltip-when-elided="true" name="resumeButton" class="standardBackgroundAndBorder" />
+    <ui:Label text="Hello there" enable-rich-text="false" />
+    <ui:Button text="Button" display-tooltip-when-elided="true" class="standardBackgroundAndBorder" />
+    <ui:Toggle label="Toggle" class="standardBackgroundAndBorder" />
+</ui:UXML>
