@@ -21,6 +21,6 @@ public class MenuController : MonoBehaviour
         var prefab = Resources.Load("ProtonPrefab");
         var newProton = GameObject.Instantiate(prefab) as GameObject;
         newProton.transform.parent = App.Instance.currentAtomGO.transform;
-        App.Instance.currentAtom.protons.Add(newProton.GetComponent<Proton>());
+        // App.Instance.currentAtom.protons.Add(newProton.GetComponent<Proton>());
     }
 }

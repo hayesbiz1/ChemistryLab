@@ -668,6 +668,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cba49c412d652540a4e5a8569f58bf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  elementList: {fileID: 11400000, guid: f0ea289ed8447cd49b56c4df5f5adc38, type: 2}
   currentAtomGO: {fileID: 0}
 --- !u!4 &1060030772
 Transform:

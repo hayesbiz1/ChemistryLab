@@ -6,6 +6,8 @@ using UnityEngine;
 public class App : MonoBehaviour
 {
     public static App Instance;
+
+    public ElementList elementList; 
     
     public GameObject currentAtomGO;
     public Atom currentAtom;
@@ -19,9 +21,22 @@ public class App : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        foreach (Element element in elementList.elements)
+        {
+            Debug.Log(element.name);
+        }
+        
         // var prefab = Resources.Load("AtomPrefab");
         // currentAtomGO = GameObject.Instantiate(prefab) as GameObject;
         // currentAtom = currentAtomGO.GetComponent<Atom>();
+
+        AtomManager.instance.onListChanged += OnAtomListChanged;
+
+    }
+
+    private void OnAtomListChanged()
+    {
+        Debug.Log("Atom list changed");
     }
 
     // Update is called once per frame

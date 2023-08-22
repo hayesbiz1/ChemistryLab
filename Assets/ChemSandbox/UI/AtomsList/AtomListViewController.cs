@@ -5,54 +5,96 @@ using UnityEngine.UIElements;
 public class AtomListViewController
 {
     private ListView atomListView;
-    private Label elementNameLabel;
-
+    
     private AtomDetailViewController atomDetailViewController;
 
     private VisualTreeAsset atomListEntryTemplate;
-
-    private List<Atom> atomList;
+    
+    AtomManager atomManager => AtomManager.instance;
     
     public void InitializeCharacterList(VisualElement root, VisualTreeAsset listElementTemplate)
     {
-        // EnumerateAllCharacters();
+        // atomManager.onListChanged += OnAtomListChanged;
+        atomManager.onCurrentAtomChanged += OnCurrentAtomChanged;
 
+        atomManager.onAtomAdded += OnAtomAdded;
+        atomManager.onAtomRemoved += OnAtomRemoved;
+        
         atomListView = root.Q<ListView>("atomListView");
+
+        var addAtomButton = root.Q<Button>("addAtomButton");
+        addAtomButton.clicked += OnAddAtomButtonClicked;
+        
+        var removeAtomButton = root.Q<Button>("removeAtomButton");
+        removeAtomButton.clicked += OnRemoveAtomButtonClicked;
 
         atomListEntryTemplate = listElementTemplate;
 
-        elementNameLabel = root.Q<Label>("elementName");
-
-        CreateListOfAtoms();
+        // elementNameLabel = root.Q<Label>("elementName");
 
         InitializeAtomListView();
 
         InitializeAtomDetailView(root);
 
         // MUST have both of these handlers or selectedIndicesChanged does not fire reliably.
-        atomListView.itemsChosen += OnSelectedAtomChanged;
-        atomListView.selectedIndicesChanged += OnSelectedIndicesChanged;
+        atomListView.itemsChosen += OnItemInListChangedByUser;
+        atomListView.selectedIndicesChanged += OnSelectedIndicesChangedByUser;
     }
 
-    private void CreateListOfAtoms()
+    private void OnAtomAdded(Atom atom)
     {
-        atomList = new List<Atom>();
-        
-        AddAtom("Hydrogen");
-        AddAtom("Helium");
-        AddAtom("Lithium");
-        AddAtom("Beryllium");
+        StartObservingAtom(atom);
+        atomListView.RefreshItems();
     }
 
-    private void AddAtom(string elementName)
+    private void OnAtomRemoved(Atom atom)
     {
-        var atom = new Atom();
-        atom.elementName = elementName;
-        atomList.Add(atom);
+        StopObservingAtom(atom);
+        atomListView.RefreshItems();
+    }
+    
+    void StartObservingAtom(Atom atom)
+    {
+        atom.onChanged += OnAtomPropertiesChanged;
+    }
+    
+    void StopObservingAtom(Atom atom)
+    {
+        atom.onChanged -= OnAtomPropertiesChanged;
+    }
+    
+    private void OnAtomPropertiesChanged(Atom changedAtom)
+    {
+        // Update associated UI entry in list.
+        Debug.Log("atom list detected change in atom");
+        var index = atomManager.atoms.IndexOf(changedAtom);
+        atomListView.RefreshItem(index);
+
+    }
+  
+    private void OnAddAtomButtonClicked()
+    {
+        var newAtom = new Atom();
+        atomManager.AddAtom(newAtom);
+    }
+    
+    private void OnRemoveAtomButtonClicked()
+    {
+        atomManager.RemoveAtom(atomManager.currentAtom);
     }
 
+    private void OnAtomListChanged()
+    {
+        atomListView.RefreshItems();
+    }
+
+    List<Atom> atomList => AtomManager.instance.atoms;
+    
     private void InitializeAtomListView()
     {
+        // Do the following when the selected Item changes.
+        // atomListView.RefreshItem()
+        
         atomListView.makeItem = () =>
         {
             var newListEntry = atomListEntryTemplate.Instantiate();
@@ -63,6 +105,7 @@ public class AtomListViewController
             return newListEntry;
         };
 
+       
         atomListView.bindItem = (item, index) =>
         {
             (item.userData as AtomListEntryViewController).SetAtom(atomList[index]);
@@ -70,20 +113,40 @@ public class AtomListViewController
 
         atomListView.fixedItemHeight = 22;
         
-        atomListView.itemsSource = atomList;
+        atomListView.itemsSource = atomManager.atoms;
+
+        foreach (var atom in atomManager.atoms)
+        {
+            StartObservingAtom(atom);
+        }
     }
 
-    private void OnSelectedAtomChanged(IEnumerable<object> obj)
+    private void OnItemInListChangedByUser(IEnumerable<object> obj)
     {
-
+        // DO nothing.
     }
     
-    private void OnSelectedIndicesChanged(IEnumerable<int> obj)
+    // Whenever list is set, we want to observe property changes for every item in the list
+    // so that corresponding entry can be updated. Whenever an item is added or removed from the list,
+    // Register/unregister interest.
+    // Will need model to have an event for item added and removed, INSTEAD of list changed.
+    
+    
+    private void OnSelectedIndicesChangedByUser(IEnumerable<int> obj)
     {
-
-        // Set selectedAtom into AtomDetailViewController.
+        // Set current item into AtomManager.
         var selectedAtom = atomListView.selectedItem as Atom;
-        atomDetailViewController.SetAtom(selectedAtom);
+        atomManager.currentAtom = selectedAtom;
+    }
+    
+    private void OnCurrentAtomChanged()
+    {
+        // Follows immediately after user selects an item (OnSelectedIndicesChangedByUser)
+        if (atomManager.hasCurrentAtom)
+        {
+            var selectedList = new List<int>() {atomManager.currentAtomIndex};
+            atomListView.SetSelectionWithoutNotify(selectedList);
+        }
     }
     
     
@@ -91,11 +154,5 @@ public class AtomListViewController
     {
         atomDetailViewController = new AtomDetailViewController(root);
     }
-    
-
-    // private void OnSelectedAtomChanged(IEnumerable<object> obj)
-    // {
-    //     var selectedAtom = atomListView.selectedItem as Atom;
-    //     Debug.Log(selectedAtom.elementName);
-    // }
+   
 }
