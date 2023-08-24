@@ -7,11 +7,19 @@ public class AtomGOController : MonoBehaviour
     public void SetAtom(Atom atom)
     {
         this.atom = atom;
+        this.transform.position = atom.position;
+        
         // Observe atom...
         atom.onChanged += OnAtomPropertiesChanged;
         
         // Add label.
        OverlayController.instance.SetTextForObject(gameObject, atom.elementName);
+    }
+    
+    public void RemoveFromScene()
+    {
+        OverlayController.instance.RemoveTextForObject(gameObject);
+        Destroy(gameObject);
     }
 
     private void OnAtomPropertiesChanged(Atom obj)
@@ -32,4 +40,5 @@ public class AtomGOController : MonoBehaviour
     {
         
     }
+
 }

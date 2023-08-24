@@ -49,11 +49,23 @@ public class OverlayController : MonoBehaviour
         textMeshPro.text = text;
         textGO1.transform.SetParent(panel.transform);
 
-        textMeshPro.color = Color.green;
+        textMeshPro.color = Color.white;
+        textMeshPro.outlineColor = Color.black;
+        textMeshPro.outlineWidth = 0.3f;
+        
+        textMeshPro.fontSize = 12;
+        
         var rectTransform = textGO1.GetComponent<RectTransform>();
         rectTransform.pivot = new Vector2(0, 0);
 
         textGODictionary[targetObject] = textGO1;
+    }
+    
+    public void RemoveTextForObject(GameObject targetObject)
+    {
+        Destroy(textGODictionary[targetObject]);
+
+        textGODictionary.Remove(targetObject);
     }
     
     
@@ -82,7 +94,7 @@ public class OverlayController : MonoBehaviour
     {
         var screenPoint = Camera.main.WorldToScreenPoint(testCube.transform.position);
         // UpdateTextGO(textGO, screenPoint);
-        UpdateTextGO(textGO1, screenPoint);
+        // UpdateTextGO(textGO1, screenPoint);
 
         foreach (var entry in textGODictionary)
         {
@@ -102,4 +114,5 @@ public class OverlayController : MonoBehaviour
         textRectTransform.anchoredPosition = new Vector2(screenPoint.x, screenPoint.y) - canvasSize2;
         
     }
+
 }

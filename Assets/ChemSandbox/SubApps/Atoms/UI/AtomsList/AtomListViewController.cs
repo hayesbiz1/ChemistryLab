@@ -74,8 +74,9 @@ public class AtomListViewController
   
     private void OnAddAtomButtonClicked()
     {
-        var newAtom = new Atom();
-        atomManager.AddAtom(newAtom);
+        var atom = new Atom();
+        atom.position = AtomEditContext.instance.GetPositionForAddedAtom();
+        atomManager.AddAtom(atom);
     }
     
     private void OnRemoveAtomButtonClicked()
