@@ -4,6 +4,8 @@ public class AtomGOController : MonoBehaviour
 {
     private Atom atom;
 
+    private OrbitalGOController orbitalGOController;
+
     public void SetAtom(Atom atom)
     {
         this.atom = atom;
@@ -11,11 +13,15 @@ public class AtomGOController : MonoBehaviour
         
         // Observe atom...
         atom.onChanged += OnAtomPropertiesChanged;
+        atom.onElectronCountChanged += OnAtomElectronCountChanged;
         
         // Add label.
        OverlayController.instance.SetTextForObject(gameObject, atom.elementName);
+
+       orbitalGOController = new OrbitalGOController(gameObject, atom.electronManager);
+       orbitalGOController.RecreateOrbitalGOs();
     }
-    
+  
     public void RemoveFromScene()
     {
         OverlayController.instance.RemoveTextForObject(gameObject);
@@ -26,6 +32,11 @@ public class AtomGOController : MonoBehaviour
     {
         // Update label
         OverlayController.instance.SetTextForObject(gameObject, atom.elementName);
+    }
+    
+    private void OnAtomElectronCountChanged(Atom obj)
+    {
+        orbitalGOController.RecreateOrbitalGOs();
     }
 
 

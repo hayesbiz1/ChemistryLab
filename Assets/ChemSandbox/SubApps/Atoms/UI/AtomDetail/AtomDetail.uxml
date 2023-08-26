@@ -1,5 +1,5 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
-    <Style src="project://database/Assets/ChemSandbox/UI/ButtonStyles.uss?fileID=7433441132597879392&amp;guid=009d93ce258bda64b81372dbecd5cc05&amp;type=3#ButtonStyles" />
+    <Style src="project://database/Assets/ChemSandbox/SubApps/Atoms/UI/ButtonStyles.uss?fileID=7433441132597879392&amp;guid=009d93ce258bda64b81372dbecd5cc05&amp;type=3#ButtonStyles" />
     <ui:VisualElement name="atomDetailContainer" style="align-items: flex-start; background-color: rgb(0, 0, 0); position: relative; left: auto; flex-direction: column; width: 100%; height: auto; opacity: 1; flex-shrink: 0; flex-basis: auto;">
         <ui:Label tabindex="-1" text="Sample" display-tooltip-when-elided="true" name="elementName" class="label1" />
         <ui:VisualElement name="Proton" style="justify-content: flex-start; flex-direction: row; align-items: center; flex-grow: 0; background-color: rgb(0, 0, 0); width: auto; height: auto;">
@@ -14,8 +14,8 @@
         </ui:VisualElement>
         <ui:VisualElement name="Electron" style="justify-content: flex-start; flex-direction: row; align-items: center; flex-grow: 0; background-color: rgb(0, 0, 0); width: auto; height: auto;">
             <ui:Label text="Electron" display-tooltip-when-elided="true" class="label1" style="align-items: flex-start; width: 100px; color: rgb(0, 255, 0); -unity-font-style: bold;" />
-            <ui:Button text="-" display-tooltip-when-elided="true" class="button" style="width: 20px; height: 20px;" />
-            <ui:Button text="+" display-tooltip-when-elided="true" class="button" style="width: 20px; height: 20px;" />
+            <ui:Button text="-" display-tooltip-when-elided="true" name="RemoveElectron" class="button" style="width: 20px; height: 20px;" />
+            <ui:Button text="+" display-tooltip-when-elided="true" name="AddElectron" class="button" style="width: 20px; height: 20px;" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

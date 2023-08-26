@@ -19,4 +19,18 @@ MonoBehaviour:
     atomicNumber: 2
   - name: Lithium
     atomicNumber: 3
+  - name: Beryllium
+    atomicNumber: 4
+  - name: Boron
+    atomicNumber: 5
+  - name: Carbon
+    atomicNumber: 6
+  - name: Nitrogen
+    atomicNumber: 7
+  - name: Oxygen
+    atomicNumber: 8
+  - name: Flourine
+    atomicNumber: 9
+  - name: Neon
+    atomicNumber: 10
   ID: 0

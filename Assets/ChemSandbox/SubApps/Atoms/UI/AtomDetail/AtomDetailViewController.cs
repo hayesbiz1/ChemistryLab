@@ -19,12 +19,19 @@ public class AtomDetailViewController
         
         var removeProtonButton = root.Q<Button>("RemoveProton");
         removeProtonButton.clicked += OnRemoveProtonClicked;
+        
+        var addElectronButton = root.Q<Button>("AddElectron");
+        addElectronButton.clicked += OnAddElectronClicked;
+
+        var removeElectronButton = root.Q<Button>("RemoveElectron");
+        removeElectronButton.clicked += OnRemoveElectronClicked;
+        
 
         container.visible = false;
 
         AtomManager.instance.onCurrentAtomChanged += OnDifferentAtomSelected;
     }
-
+    
     private void OnAddProtonClicked()
     {
         currentAtom.protonCount += 1;
@@ -34,7 +41,17 @@ public class AtomDetailViewController
     {
         currentAtom.protonCount -= 1;
     }
-
+    
+    private void OnAddElectronClicked()
+    {
+        currentAtom.electronCount += 1;
+    }
+    
+    private void OnRemoveElectronClicked()
+    {
+        currentAtom.electronCount -= 1;
+    }
+    
     private void OnDifferentAtomSelected()
     {
         SetSelectedAtom(AtomManager.instance.currentAtom);

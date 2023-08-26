@@ -6,6 +6,8 @@ using UnityEngine;
 public class OverlayController : MonoBehaviour
 {
     public static OverlayController instance;
+
+    public GameObject textBackgroundPrefab;
     
     public Canvas canvas;
     private GameObject panel;
@@ -30,7 +32,7 @@ public class OverlayController : MonoBehaviour
         {
             // Update existing object.
             var textObject = textGODictionary[targetObject];
-            var textMeshPro = textObject.GetComponent<TextMeshProUGUI>();
+            var textMeshPro = textObject.GetComponentInChildren<TextMeshProUGUI>();
             textMeshPro.text = text;
         }
         else
@@ -43,22 +45,27 @@ public class OverlayController : MonoBehaviour
 
     private void AddTextForObject(GameObject targetObject, string text)
     {
+        var backgroundGO = Instantiate(textBackgroundPrefab);
+        backgroundGO.transform.SetParent(panel.transform);
+        
         textGO1 = new GameObject();
+        textGO1.transform.parent = backgroundGO.transform;
+        
         var textMeshPro = textGO1.AddComponent<TextMeshProUGUI>();
         textMeshPro.alignment = TextAlignmentOptions.TopLeft;
         textMeshPro.text = text;
-        textGO1.transform.SetParent(panel.transform);
+        textGO1.transform.SetParent(backgroundGO.transform);
 
         textMeshPro.color = Color.white;
-        textMeshPro.outlineColor = Color.black;
-        textMeshPro.outlineWidth = 0.3f;
+        textMeshPro.outlineColor = Color.green;
+        textMeshPro.outlineWidth = 0.1f;
         
         textMeshPro.fontSize = 12;
         
         var rectTransform = textGO1.GetComponent<RectTransform>();
         rectTransform.pivot = new Vector2(0, 0);
 
-        textGODictionary[targetObject] = textGO1;
+        textGODictionary[targetObject] = backgroundGO;
     }
     
     public void RemoveTextForObject(GameObject targetObject)
@@ -76,23 +83,24 @@ public class OverlayController : MonoBehaviour
         // AddTestTextObjectToCanvas();
     }
 
-    private void AddTestTextObjectToCanvas()
-    {
-        textGO1 = new GameObject();
-        var textMeshPro = textGO1.AddComponent<TextMeshProUGUI>();
-        textMeshPro.alignment = TextAlignmentOptions.TopLeft;
-        textMeshPro.text = "Hello\nGoodbye";
-        textGO1.transform.SetParent(panel.transform);
-
-        textMeshPro.color = Color.green;
-        var rectTranform = textGO1.GetComponent<RectTransform>();
-        rectTranform.pivot = new Vector2(0, 0);
-    }
+    // private void AddTestTextObjectToCanvas()
+    // {
+    //     textGO1 = new GameObject();
+    //     var textMeshPro = textGO1.AddComponent<TextMeshProUGUI>();
+    //     textMeshPro.alignment = TextAlignmentOptions.TopLeft;
+    //     textMeshPro.text = "Hello\nGoodbye";
+    //     textGO1.transform.SetParent(panel.transform);
+    //
+    //     textMeshPro.color = Color.green;
+    //     var rectTranform = textGO1.GetComponent<RectTransform>();
+    //     rectTranform.pivot = new Vector2(0, 0);
+    // }
 
     // Update is called once per frame
     void Update()
     {
-        var screenPoint = Camera.main.WorldToScreenPoint(testCube.transform.position);
+        Vector3 screenPoint;
+        ; // = Camera.main.WorldToScreenPoint(testCube.transform.position);
         // UpdateTextGO(textGO, screenPoint);
         // UpdateTextGO(textGO1, screenPoint);
 
